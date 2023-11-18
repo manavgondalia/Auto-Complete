@@ -4,12 +4,17 @@ input {
 }
 
 #helper {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     position: absolute;
+    width: fit-content;
+    padding: 0 10vw 0 10vw;
     top: 40%;
     display: flex;
-    left: 35%;
     align-items: center;
-    color:rgb(36, 33, 33)
+    color: rgb(36, 33, 33)
 }
 
 #arrow-gif {
@@ -26,7 +31,10 @@ input {
     position: absolute;
     border: 0.283vh solid #ddd;
     top: 35%;
-    left: 33%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     font-size: medium;
 
 }
