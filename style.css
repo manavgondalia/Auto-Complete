@@ -3,6 +3,20 @@ input {
     font-family: 'Poppins', sans-serif;
 }
 
+#helper {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    left: 35%;
+    align-items: center;
+    color:rgb(36, 33, 33)
+}
+
+#arrow-gif {
+    height: 8vh;
+    width: 8vh;
+}
+
 #wordToComplete,
 #complete {
     width: 33.33vw;
