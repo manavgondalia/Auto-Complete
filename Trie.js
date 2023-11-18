@@ -59,7 +59,7 @@ async function getWordsInTrie() {
 		words[i] = words[i].replace("\r", "");
 		addWord(TrieArray, words[i]);
 	}
-	console.log(words);
+	// console.log(words);
 	return words;
 }
 
@@ -77,25 +77,30 @@ wordToComplete.addEventListener("input", () => {
 
 	let prevWords = wordToComplete.value.split(" ");
 	prevWords.pop();
+	console.log(prevWords);
 
 	const closestString = search(TrieArray, word);
 
 	if (closestString === undefined) {
-		document.getElementById("complete").innerHTML = "";
+		document.getElementById("complete").innerHTML = prevWords.join(" ");
 		return;
 	} else if (word === "") {
-		document.getElementById("complete").innerHTML = "";
+		document.getElementById("complete").innerHTML = prevWords.join(" ");
 		return;
 	}
 
 	console.log(closestString);
 
-	document.getElementById("complete").innerHTML = closestString;
+	document.getElementById("complete").innerHTML =
+		prevWords.join(" ") + " " + closestString;
 
-	// if down arrow key is pressed, fill in the word
 	document.addEventListener("keydown", (e) => {
 		if (e.key === "ArrowDown") {
-			wordToComplete.value = prevWord;
+			wordToComplete.value =
+				prevWords.length !== 0
+					? prevWords.join(" ") + " " + closestString
+					: closestString;
+			document.getElementById("complete").innerHTML = wordToComplete.value;
 		}
 	});
 });
